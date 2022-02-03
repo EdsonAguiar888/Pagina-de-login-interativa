@@ -19,7 +19,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid red;
+    border: 2px solid rgb(0, 0, 0);
     height: 100vh;
     background-color: #ecf0f1;
 }
@@ -30,8 +30,8 @@ body {
     align-items: center;
     background-color: #fff;
     border-radius: 15px;
-    width: 80%;
-    height: 50%;
+    width: 960px;
+    height: 450px;
     position: relative;
 }
 
@@ -42,11 +42,15 @@ body {
     background-color: #58af9b;
     width: 40%;
     height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+    left: 60%;
 
 }
 
 .title {
-   
+    color: #58af9b;
     font-size: 28px;
     font-weight: bold;
     text-transform: capitalize;
@@ -56,13 +60,23 @@ body {
     color: #fff;
 }
 
+.title-second {
+    color: #58af9b;
+}
+
 .description {
     font-size: 14px;
     font-weight: 300;
-    color: #fff;
     line-height: 30px;
 }
 
+.description-primary {
+    color: #fff;
+}
+
+.description-second  {
+    color: #7f8c8d;
+}
 .btn {
     border-radius: 15px;
     text-transform: uppercase;
@@ -71,6 +85,10 @@ body {
     padding: 10px 50px;
     cursor: pointer;
     font-weight: bold;
+    width: 150px;
+    align-self: center;
+    border: none;
+    margin-top: 10px;
 }
 
 .btn-primary {
@@ -83,38 +101,128 @@ body {
     color: #58af9b;
 }
 
+.btn-second {
+    background-color: #58af9b;
+    border:  1px solid #58af9b;
+    
+}
+
+.btn-second:hover {
+    background-color: #fff;
+    border: 1px solid #58af9b;
+    color: #58af9b;
+}
+
 .first-content {
     display: flex;
+    display: none;
 }
 
 
-
-    .first-column {
-        text-align: center;
-        flex: 1 0 auto;
-        z-index: 10;
-    }
-
-
-
-    .second-column {
-        flex: 2 0 auto;
-    }
-
-
-        .list-social-media {
-            display: flex;
+        .first-column {
+            text-align: center;
+            flex: 1 0 auto;
+            z-index: 10;
         }
 
 
-        .form {
+
+        .second-column {
+            flex: 2 0 auto;  
             display: flex;
             flex-direction: column;
+            align-items: center; 
         }
+
+           
+            .list-social-media {
+                display: flex;
+                list-style-type: none;
+                
+            }
+
+            .item-social-media{
+              
+
+            }
+
+            .item-social-media {
+                color: #95a5a6;
+                margin: 10px;
+            }
+            img {
+                height: 32px;
+                width: 32px;
+                border-radius: 50%;
+                margin: 0;
+                }
+
+                img:hover {
+                    color: #ecf0f1;
+                    border: 1px solid #ecf0f1;
+                    
+                }
+
+            .img {
+                height: 30px;
+                width: 30px;
+                position: absolute;
+                top: 3px;
+                left: 3px;
+            }
+
+
+            label {
+                position: relative;
+                padding-left: 48px;
+            }
+
+            .label-input {
+                background-color: #ecf0f1;
+                display: flex;
+                margin: 8px;
+            }
+            .form {
+                display: flex;
+                flex-direction: column;
+                width: 55%;
+                
+            }
+
+            .form input {
+                height: 45px;
+                border: none;
+                background-color: #ecf0f1;
+                width: 100%;
+                outline: none;
+              
+                
+
+            }
 
 
 .second-content {
     position: absolute;
-    display: none;
+    display: flex;
 
 }
+
+    .second-content .first-column {
+        order: 2;
+    }
+
+    .second-content .second-column {
+        order: 1;
+    }
+
+    .password {
+        color: #34995e;
+        font-size: 14px;
+        margin: 15px;
+        text-align: center;
+       
+    }
+
+    .password::first-letter {
+        text-transform: capitalize;
+    }
