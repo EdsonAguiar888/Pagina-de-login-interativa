@@ -122,85 +122,84 @@ body {
 .first-content .second-column {
     z-index: 12;
 }
-
-        .first-column {
-            text-align: center;
-            width: 40%;
-            z-index: 10;
-        }
-
+ .first-column {
+    text-align: center;
+    width: 40%;
+    z-index: 10;
+}
 
 
-        .second-column {
-            width: 60%;   
-            display: flex;
-            flex-direction: column;
-            align-items: center; 
-        }
 
-           
-            .list-social-media {
-                display: flex;
-                list-style-type: none;
-                
-            }
+.second-column {
+    width: 60%;   
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
 
-            .item-social-media {
-                color: #95a5a6;
-                margin: 10px;
-            }
-            img {
-                height: 32px;
-                width: 32px;
-                border-radius: 50%;
-                margin: 0;
-                transition: .8s;
-                }
 
-                img:hover {
-                    color: #ecf0f1;
-                    border: 1px solid #ecf0f1;
-                    
-                }
+.list-social-media {
+    display: flex;
+    list-style-type: none;
+    
+}
 
-            .img {
-                height: 30px;
-                width: 30px;
-                position: absolute;
-                top: 3px;
-                left: 3px;
-            }
+.item-social-media {
+    color: #95a5a6;
+    margin: 10px;
+}
+img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    margin: 0;
+    transition: .8s;
+    }
 
-            
-           
+    img:hover {
+        color: #ecf0f1;
+        border: 1px solid #ecf0f1;
+        
+    }
 
-            .label-input {
-                background-color: #ecf0f1;
-                display: flex;
-                margin: 8px;
-                align-items: center;
-                position: relative;
-                padding-left: 48px;
-            }
-            .form {
-                display: flex;
-                flex-direction: column;
-                width: 55%;
-                
-            }
+.img {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
 
-            .form input {
-                height: 45px;
-                border: none;
-                background-color: #ecf0f1;
-                width: 100%;
-                outline: none;
-            }
 
-            input:-webkit-autofill{
-                -webkit-box-shadow: 0 0 0px #ecf0f1; inset !important;
-                -webkit-text-fill-color: #000; !important;
-            }
+
+
+.label-input {
+    background-color: #ecf0f1;
+    display: flex;
+    margin: 8px;
+    align-items: center;
+    position: relative;
+    padding-left: 48px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    
+}
+
+.form input {
+    height: 45px;
+    border: none;
+    background-color: #ecf0f1;
+    width: 100%;
+    outline: none;
+}
+
+input:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0px #ecf0f1; inset !important;
+    -webkit-text-fill-color: #000; !important;
+}
 
 .second-content {
     position: absolute;
@@ -208,27 +207,27 @@ body {
 
 }
 
-    .second-content .first-column {
-        order: 2;
-        z-index: -1;
-    }
+.second-content .first-column {
+    order: 2;
+    z-index: -1;
+}
 
-    .second-content .second-column {
-        order: 1;
-        z-index: -1;
-    }
+.second-content .second-column {
+    order: 1;
+    z-index: -1;
+}
 
-    .password {
-        color: #34995e;
-        font-size: 14px;
-        margin: 15px;
-        text-align: center;
-       
-    }
+.password {
+    color: #34995e;
+    font-size: 14px;
+    margin: 15px;
+    text-align: center;
 
-    .password::first-letter {
-        text-transform: capitalize;
-    }
+}
+
+.password::first-letter {
+    text-transform: capitalize;
+}
 
 
 
@@ -236,198 +235,197 @@ body {
 
     /* ************************sign-in************************ */
 
-    .sign-in-js .first-content .first-column {     
-    /* .sign-in-js .first-content .second-column {  => esta linha class foi deslocada abaixo para ANIMAÇAO CSS PARA O CONTEUDO   */
-        z-index: -1;
+.sign-in-js .first-content .first-column {     
+/* .sign-in-js .first-content .second-column {  => esta linha class foi deslocada abaixo para ANIMAÇAO CSS PARA O CONTEUDO   */
+    z-index: -1;
+}
+
+.sign-in-js .first-content .second-column {         /* => Para animaçao Css deslocamento atraz do content:BEFORE */
+    z-index: -1;
+    position: relative;
+    animation: deslocamentoEsquerda .3s;
+}
+
+/* .sign-in-js .second-content .first-column, => foi colocada essa linha class separada a baixo com um z-index = 13 sobrepor e nao mostrar o conteudo durante a transiçao     */ 
+.sign-in-js .second-content .second-column {
+    z-index: 11;
+}
+
+.sign-in-js .second-content .first-column {
+    z-index: 13;
+}
+
+.sign-in-js .content::before {
+    left: 60%;
+    
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    animation: slidein .8s;
+    z-index: 12;
+}
+
+
+
+
+/* ********************sign-up************************* */
+
+.sign-up-js .content::before {
+
+    z-index: 12;
+    animation: slideout .8s;
+
+}
+
+
+/* .sign-up-js .first-content .first-column,  => foi colocada essa linha class separada a baixo com um z-index = 13 sobrepor e nao mostrar o conteudo durante a transiçao */
+.sign-up-js .first-content .second-column {
+    z-index: 11;
+}
+
+.sign-up-js .first-content .first-column {
+    z-index: 13;
+}
+
+.sign-up-js .second-content .first-column { 
+/* .sign-up-js .second-content .second-column {  => esta linha class foi deslocada abaixo para ANIMAÇAO CSS PARA O CONTEUDO */
+    z-index: -1;    
+}
+
+.sign-up-js .second-content .second-column {   /* => Para animaçao Css deslocamento atraz do content:BEFORE */
+    position: relative;
+    z-index: -1;
+    animation: deslocamentoDireita 1s;
+}
+
+
+/* *****************************Animaçao css********************************* */
+
+@keyframes slidein {
+    from{
+        left: 30%;
+        width: 20%;
     }
 
-    .sign-in-js .first-content .second-column {         /* => Para animaçao Css deslocamento atraz do content:BEFORE */
-        z-index: -1;
-        position: relative;
-        animation: deslocamentoEsquerda .3s;
+    /*   25% {
+        left: 0;
+        width: 0%;
     }
 
-    /* .sign-in-js .second-content .first-column, => foi colocada essa linha class separada a baixo com um z-index = 13 sobrepor e nao mostrar o conteudo durante a transiçao     */ 
-    .sign-in-js .second-content .second-column {
-        z-index: 11;
+    50% {
+        left: 0;
+        width: 0%;
     }
 
-    .sign-in-js .second-content .first-column {
-        z-index: 13;
-    }
+    75% {
+        left: 0;
+        width: 40%;
+    } */
 
-    .sign-in-js .content::before {
+
+    to {
         left: 60%;
-        
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
-        animation: slidein .8s;
-        z-index: 12;
-    }
-
-
-
-
-    /* ********************sign-up************************* */
-
-    .sign-up-js .content::before {
-
-        z-index: 12;
-        animation: slideout .8s;
+        width: 40%;
 
     }
 
+}
 
-    /* .sign-up-js .first-content .first-column,  => foi colocada essa linha class separada a baixo com um z-index = 13 sobrepor e nao mostrar o conteudo durante a transiçao */
-    .sign-up-js .first-content .second-column {
-        z-index: 11;
-    }
-
-    .sign-up-js .first-content .first-column {
-        z-index: 13;
-    }
-
-    .sign-up-js .second-content .first-column, { 
-    /* .sign-up-js .second-content .second-column {  => esta linha class foi deslocada abaixo para ANIMAÇAO CSS PARA O CONTEUDO */
-        z-index: -1;
+@keyframes slideout {
+    from{
+        left: 40%;
+        width: 30%;
         
     }
 
-    .sign-up-js .second-content .second-column {   /* => Para animaçao Css deslocamento atraz do content:BEFORE */
-        position: relative;
-        z-index: -1;
-        animation: deslocamentoDireita 1s;
+    /*   25% {
+        left: 0;
+        width: 0;
     }
 
+    50% {
+        left: 0;
+        width: 0;
+    }
 
-  /* *********************Animaçao css********************** */
+    75% {
+        left: 0;
+        width: 0;
+    } */
 
-    @keyframes slidein {
-        from{
-            left: 30%;
-            width: 20%;
-        }
 
-      /*   25% {
-            left: 0;
-            width: 0%;
-        }
-
-        50% {
-            left: 0;
-            width: 0%;
-        }
-
-        75% {
-            left: 0;
-            width: 40%;
-        } */
-
-        
-        to {
-            left: 60%;
-            width: 40%;
-
-        }
+    to {
+        left: 0%;
+        width: 40%;
 
     }
 
-    @keyframes slideout {
-        from{
-            left: 40%;
-            width: 30%;
-            
-        }
-
-      /*   25% {
-          left: 0;
-          width: 0;
-        }
-
-        50% {
-            left: 0;
-            width: 0;
-        }
-
-        75% {
-            left: 0;
-            width: 0;
-        } */
-
-        
-        to {
-            left: 0%;
-            width: 40%;
-
-        }
-
-    }
+}
 
 
-    /* **********ANIMAÇAO CSS PARA O CONTEUDO******* */
+    /* *******************ANIMAÇAO CSS PARA O CONTEUDO*********************** */
 
   
 
-    @keyframes deslocamentoDireita {
+@keyframes deslocamentoDireita {
 
-        from {
-            left: -110px;
-            opacity: 1;
-            z-index: 12;
+    from {
+        left: -110px;
+        opacity: 1;
+        z-index: 12;
+
+    }
+
+    /*   25%  {
+        left: -80px;
+        opacity: .5;
+        z-index: 12;
+    }
+
+    50% {
+        left: -100px;
+        opacity: .2;
+        z-index: 12;
+    } */
+
+    to {
+        left: 0px;
+        opacity: 0;
+        z-index: -1;
+    }
+
+
+}
+
+
+@keyframes deslocamentoEsquerda {
+
+    from {
         
-        }
+        left: 0px;
+        opacity: 1;
+        z-index: 12;
+    }
 
-      /*   25%  {
-            left: -80px;
-            opacity: .5;
-            z-index: 12;
-        }
+    /*   25%  {
+        left: -80px;
+        opacity: .2;
+        z-index: 12;
+    }
 
-        50% {
-            left: -100px;
-            opacity: .2;
-            z-index: 12;
-        } */
+    50% {
+        left: -100px;
+        opacity: .5;
+        z-index: 12;
+    } */
 
-        to {
-            left: 0px;
-            opacity: 0;
-            z-index: -1;
-        }
-
-
+    to {
+        left:  -110px;
+        
+        opacity: 0;
+        z-index: -1;
     }
 
 
-    @keyframes deslocamentoEsquerda {
-
-        from {
-            
-            left: 0px;
-            opacity: 1;
-            z-index: 12;
-        }
-
-      /*   25%  {
-            left: -80px;
-            opacity: .2;
-            z-index: 12;
-        }
-
-        50% {
-            left: -100px;
-            opacity: .5;
-            z-index: 12;
-        } */
-
-        to {
-            left:  -110px;
-            
-            opacity: 0;
-            z-index: -1;
-        }
-
-
-    }
+}
